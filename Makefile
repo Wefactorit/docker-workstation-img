@@ -22,7 +22,7 @@ build:
 trivy:
 	@if which trivy &> /dev/null ; then \
 		echo "Checking image with Trivy..." ; \
-		trivy --exit-code 1 --severity CRITICAL build/$(IMAGE_NAME):$(IMAGE_VERSION) ; \
+		trivy --exit-code 1 build/$(IMAGE_NAME):$(IMAGE_VERSION) ; \
 	else \
 		echo "Not checking image because Trivy binary not found in path" ; \
 	fi
